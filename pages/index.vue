@@ -3,11 +3,11 @@
         <h1>Fash Vix Marketplace</h1>
 
         <div>
-            <h3>Fashion Attire</h3>
+            <h2>Fashion Attires</h2>
 
             <div>
-                <div v-for="attire in attires" :key="attire.id">
-                    <h3>{{attire.name}}</h3>
+                <div v-for="attire in attires.sort((a,b) => b.likes - a.likes)" :key="attire.id">
+                    <h4>{{attire.name}}</h4>
                     <p>{{attire.likes}}</p>
                 </div>
             </div>
@@ -33,13 +33,13 @@ export default {
                 {
                     id: 1,
                     name: "Culotte dress",
-                    likes: 0
+                    likes: 2
                 },
 
                 {
                     id: 2,
                     name: "Babydoll dress",
-                    likes: 0
+                    likes: 4
                 },
                 {
                     id: 3,
