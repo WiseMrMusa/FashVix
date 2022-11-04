@@ -8,7 +8,7 @@
             <div>
                 <div v-for="attire in attires.sort((a,b) => b.likes - a.likes)" :key="attire.id">
                     <h4>{{attire.name}}</h4>
-                    <p>{{attire.likes}}</p>
+                    <p>{{attire.likes}}</p> <button @click="incCount(attire)">+</button>
                 </div>
             </div>
         </div>
@@ -83,6 +83,10 @@ export default {
                 },
             ]
         }
+    },
+
+    methods: {
+        incCount: (item) => {item.likes++}
     }
 }
 </script>
